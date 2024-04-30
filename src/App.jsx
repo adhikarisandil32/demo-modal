@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Modal from "./Modal"
+import ReactDOM from "react-dom"
 
 function App() {
   const [showModal, setShowModal] = useState(false)
