@@ -3,19 +3,17 @@ import Modal from "./Modal"
 import ReactDOM from "react-dom"
 
 function App() {
-  const [showModal, setShowModal] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false)
   return (
-    <>
-      <div style={{ textAlign: "center" }}>
-        <button onClick={() => setShowModal(true)}>Open Modal</button>
-      </div>
+    <div>
+      <button onClick={() => setIsModalOpen(true)}>Open Modal</button>
 
-      {showModal &&
+      {isModalOpen &&
         ReactDOM.createPortal(
-          <Modal setShowModal={setShowModal} />,
+          <Modal setIsModalOpen={setIsModalOpen} />,
           document.getElementById("portal")
         )}
-    </>
+    </div>
   )
 }
 
